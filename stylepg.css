@@ -105,9 +105,7 @@ body {
    2. ESTILOS DE LA SECCIÓN DE SERVICIOS
    ========================================= */
 .services-section {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 80px 20px;  
   text-align: center;
 }
 
@@ -212,6 +210,96 @@ body {
   box-shadow: 0 0 15px #00f0ff;
 }
 /* estilo navbar*/
-nav {
-  
+/* HEADER FIJO EN LA PARTE SUPERIOR */
+.header-horizontal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(8, 8, 17, 0.85); /* Fondo oscuro semitransparente */
+  backdrop-filter: blur(10px);        /* Efecto de cristal esmerilado */
+  border-bottom: 2px solid #00f0ff;  /* Borde neón inferior */
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
+}
+
+/* NAVBAR ALINEADA EN HORIZONTAL CON FLEXBOX */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: row;        /* Alinea los bloques principales uno al lado del otro */
+  justify-content: space-between; /* Separa el logo, el menú y el botón */
+  align-items: center;        /* Centra verticalmente los elementos */
+}
+
+
+
+/* LISTA DE ENLACES EN FILA HORIZONTAL */
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: row; /* Apila las opciones de izquierda a derecha */
+  gap: 30px;           /* Espaciado horizontal entre cada enlace */
+  margin: 0;
+  padding: 0;
+}
+
+/* ESTILO DE CADA ENLACE */
+.nav-links a {
+  color: #cccccc;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* EFECTO HOVER E ILUMINACIÓN NEÓN */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00f0ff;
+  text-shadow: 0 0 8px #00f0ff;
+}
+
+/* Línea animada neón debajo de cada opción al pasar el cursor */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* BOTÓN DESTACADO EN EL NAVBAR */
+.btn-navbar {
+  padding: 8px 18px;
+  color: #ff007f;
+  border: 1px solid #ff007f;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-navbar:hover {
+  background-color: #ff007f;
+  color: #fff;
+  box-shadow: 0 0 18px #ff007f;
 }
